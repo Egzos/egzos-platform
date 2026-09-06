@@ -1,0 +1,73 @@
+# Copyright (c) 2026 Ali Sasanian. All rights reserved.
+# Proprietary and confidential. See LICENSE.
+#
+# egzos-platform path-ownership map — read by .github/scripts/check_ownership.py
+# Schema version 1. Chief-only file; agent branches touching this fail the check.
+
+version: 1
+branch_prefix: "agent/"
+
+size_cap:
+  lines: 600
+  files: 30
+  exclude:
+    - "**/*.lock"
+    - "tests/fixtures/**"
+
+# Paths that ONLY the Chief may modify. Any agent branch touching these fails immediately.
+chief_only:
+  - "CLAUDE.md"
+  - ".github/**"
+  - ".claude/**"
+  - "spec/**"
+  - "package.json"
+  - "pyproject.toml"
+  - "pnpm-lock.yaml"
+
+agents:
+  # Atelier routine: list, search, permissions dashboard, pending review.
+  # Owns all of apps/ui-flagship/** except a4g's exclusive bespoke paths.
+  a4s-atelier:
+    paths:
+      - "apps/ui-flagship/**"
+    exclusive: []
+
+  # Atelier bespoke: onion graph, drag-drop gate, step-up integration, triage flow.
+  # apps/ui-flagship/src/bespoke/** is exclusive — a4s must not touch those paths.
+  a4g-atelier:
+    paths:
+      - "apps/ui-flagship/src/bespoke/**"
+    exclusive:
+      - "apps/ui-flagship/src/bespoke/**"
+
+  # Landlord server: hosted containers, preview pipeline, relay, metering, thin-server delivery.
+  # Owns all of server/** except a9f's exclusive billing/session paths.
+  a9s-landlord:
+    paths:
+      - "server/**"
+    exclusive: []
+
+  # Landlord billing/sessions: Firebase-as-identity, subscription proof, session checks.
+  a9f-landlord:
+    paths:
+      - "server/egzos_platform/billing/**"
+      - "server/egzos_platform/sessions/**"
+    exclusive:
+      - "server/egzos_platform/billing/**"
+      - "server/egzos_platform/sessions/**"
+
+  # Adversary: security testing. adversarial/** is exclusive.
+  a6-adversary:
+    paths:
+      - "adversarial/**"
+    exclusive:
+      - "adversarial/**"
+
+  # Reviewers — never push.
+  a1r-reviewer:
+    paths: []
+    exclusive: []
+
+  a2-conformance:
+    paths: []
+    exclusive: []
