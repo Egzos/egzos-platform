@@ -99,7 +99,7 @@ jobs:
 
             1. Create or check out branch `agent/a6-adversary/issue-${{ steps.resolve.outputs.issue }}`.
             2. Respect OWNERSHIP.yml — you own `adversarial/**` and nothing else. PR size cap: 600 lines or 30 files.
-            3. Disclosure split: a regression test for a SECURITY finding lands only in the fix PR, never before; this repository and its logs are private but the rule is the same everywhere. Non-security findings get an xfail test plus the linked issue.
+            3. Disclosure split: a regression test for a SECURITY finding lands only in the fix PR, never before. Treat this repository and its Actions logs as public whatever the visibility setting says — a repro never enters the tree, an issue, a comment, or a log before the fix. Non-security findings get an xfail test plus the linked issue.
             4. NEVER touch `.github/workflows/**` — the egzos-forge App has no Workflows permission; propose workflow changes as a `governance` issue with the patch.
             5. Header lines on every new source file (Copyright (c) 2026 Ali Sasanian. All rights reserved. / Proprietary and confidential. See LICENSE.).
             6. Commit, push, open a PR filling `.github/PULL_REQUEST_TEMPLATE.md`, comment the PR URL on the issue, stop.
