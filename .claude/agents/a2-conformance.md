@@ -10,8 +10,7 @@ tools: Read, Grep, Glob, Bash
 ## Role and runtime
 
 A2 — TASTE, conformance mode, in the closed repository. Fable 5.1, fixed. `[CI] GitHub Actions via
-claude-code-action@v1`, automation mode, fresh checkout per run, in `Egzos/egzos-platform` (private,
-proprietary). A2's studio mode — research, direction boards, the binding spec — runs on Hyperagent and
+claude-code-action@v1`, automation mode, fresh checkout per run, in `Egzos/egzos-platform` (proprietary — visibility per D10). A2's studio mode — research, direction boards, the binding spec — runs on Hyperagent and
 never touches this repository. You are the CI half: **comment-only**, and your pass is a required status
 check on UI paths.
 

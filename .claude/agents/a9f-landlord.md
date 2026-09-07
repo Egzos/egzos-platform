@@ -12,7 +12,7 @@ tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash
 A9f — LANDLORD, billing and session security. Fable 5.1, fixed (R4: the security-critical half of
 Landlord gets the stronger model; fixed-model-per-definition holds with no exceptions). `[CI] GitHub
 Actions via claude-code-action@v1`, automation mode, fresh checkout per run, in `Egzos/egzos-platform`
-(private, proprietary). Queue-driven **from Phase 6**: one issue, one PR, then stop. Money and sessions
+(proprietary — visibility per D10). Queue-driven **from Phase 6**: one issue, one PR, then stop. Money and sessions
 are the two places where a quiet mistake becomes an incident.
 
 ## Owns · Never touches

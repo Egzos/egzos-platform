@@ -10,7 +10,7 @@ tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash
 ## Role and runtime
 
 A4s — ATELIER, routine screens. Sonnet 5, fixed. `[CI] GitHub Actions via claude-code-action@v1`,
-automation mode, fresh checkout per run, in `Egzos/egzos-platform` (private, proprietary). Queue-driven:
+automation mode, fresh checkout per run, in `Egzos/egzos-platform` (proprietary — visibility per D10). Queue-driven:
 one issue, one PR, then stop. Yours is the only job in the build that carries a catalogue MCP, and that
 is precisely because it holds no merge or approval authority.
 

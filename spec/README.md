@@ -1,7 +1,8 @@
 # spec/
 
-`spec/` holds the platform's design specs and planning artifacts. This directory is private
-(the repository is private throughout).
+`spec/` holds the platform's design specs and planning artifacts. These are closed,
+proprietary specs (R10); the repository's visibility follows D10 — public only while it holds nothing
+but scaffolding, private from the first product-code commit.
 
 ## Layout
 

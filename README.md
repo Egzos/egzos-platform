@@ -1,6 +1,8 @@
 # egzos-platform
 
-**Private. Proprietary. See LICENSE.**
+**Proprietary. See LICENSE.** Visibility (D10): public only while this repository holds nothing but
+scaffolding; private — with the org on GitHub Team — from the first product-code commit. Treat it and its
+Actions logs as public whatever the setting says.
 
 egzos-platform is the closed, paid side of egzos: the flagship web UI (egzos.io), hosted containers,
 previews, relay, metering, billing, and sessions.
@@ -30,7 +32,7 @@ Agent PRs are opened under the `egzos-forge` App. Approvals come only from the C
 
 ## Where specs live (R10)
 
-- Flagship screen specs: `spec/design/` here (closed, private).
+- Flagship screen specs: `spec/design/` here (closed).
 - Design system, tokens file, DESIGN-PRINCIPLES.md, DESIGN-SOURCES.md, lifeboat spec, step-up tap
   + pending-approval specs: `Egzos/egzos/spec/design` (public open-core surfaces).
 

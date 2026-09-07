@@ -1,6 +1,7 @@
 # spec/design/
 
-Flagship screen specs. Private — this repository is private throughout.
+Flagship screen specs — closed, proprietary (R10). Repository visibility follows D10: public only while
+scaffold-only, private from the first product-code commit.
 
 Per R10, flagship screen specs live here; the shared design system (tokens, principles, sources,
 lifeboat spec, step-up tap + pending-approval specs) lives in the public sibling
