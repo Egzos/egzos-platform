@@ -1,0 +1,73 @@
+# Copyright (c) 2026 Ali Sasanian. All rights reserved.
+# Proprietary and confidential. See LICENSE.
+#
+# egzos-platform label manifest — synced by labels-sync.yml on push to main.
+# Format: plain YAML list of {name, color (6-hex, no #), description}.
+
+# ── Shared labels (identical in both repos) ──────────────────────────────────
+
+- name: security
+  color: "cc0000"
+  description: "Security vulnerability or concern — opens a private advisory, never a public issue"
+
+- name: governance
+  color: "7a2d8c"
+  description: "Governance-sensitive change touching CLAUDE.md, .github/**, .claude/**, or spec/**"
+
+- name: drift
+  color: "b45309"
+  description: "Nightly integration drift report (one per night, updated not duplicated)"
+
+- name: design-gap
+  color: "0e7490"
+  description: "Missing design decision; A2 returns options for the Chief's pick"
+
+- name: design-approved
+  color: "065f46"
+  description: "Design direction approved by the Chief"
+
+- name: contract-change
+  color: "7c3aed"
+  description: "Proposed change to a frozen contract; escalated to a1p-planner in Egzos/egzos"
+
+- name: plan-request
+  color: "1e40af"
+  description: "Planning request (handled via Egzos/egzos a1p-planner)"
+
+- name: chief-hold
+  color: "1c1917"
+  description: "Chief is reviewing; do not merge or action"
+
+- name: chief-declined
+  color: "44403c"
+  description: "Chief declined this PR or issue"
+
+- name: size-exception
+  color: "78350f"
+  description: "Chief-granted exception to the 600-line / 30-file PR size cap"
+
+- name: stale
+  color: "d6d3d1"
+  description: "PR has been inactive for 2+ days and will be flagged for attention"
+
+- name: phase-0.0
+  color: "164e63"
+  description: "Scaffold phase 0.0 work item"
+
+# ── egzos-platform-specific agent labels ─────────────────────────────────────
+
+- name: "agent:a4s-atelier"
+  color: "1d4ed8"
+  description: "Assign to a4s-atelier (Sonnet): routine screens, shadcn picks vendored via PR, 21st MCP"
+
+- name: "agent:a4g-atelier"
+  color: "1d4ed8"
+  description: "Assign to a4g-atelier (Fable): bespoke UI — onion graph, drag-drop gate, step-up, triage"
+
+- name: "agent:a9s-landlord"
+  color: "1d4ed8"
+  description: "Assign to a9s-landlord (Sonnet): hosted containers, preview pipeline, relay, metering"
+
+- name: "agent:a9f-landlord"
+  color: "1d4ed8"
+  description: "Assign to a9f-landlord (Fable): billing paths, session security, Firebase-as-identity"
