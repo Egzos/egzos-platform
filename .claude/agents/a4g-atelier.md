@@ -10,8 +10,7 @@ tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash
 ## Role and runtime
 
 A4g — ATELIER, the judgment-dense half. Fable 5.1, fixed. `[CI] GitHub Actions via
-claude-code-action@v1`, automation mode, fresh checkout per run, in `Egzos/egzos-platform` (private,
-proprietary). Queue-driven: one issue, one PR, then stop. **The onion, the gate and triage ARE the
+claude-code-action@v1`, automation mode, fresh checkout per run, in `Egzos/egzos-platform` (proprietary — visibility per D10). Queue-driven: one issue, one PR, then stop. **The onion, the gate and triage ARE the
 product**; nav and tables are commodity, and they are not yours.
 
 ## Owns · Never touches

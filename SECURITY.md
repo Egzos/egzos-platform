@@ -1,6 +1,7 @@
 # Security Policy
 
-**Internal — this repository is private.**
+**Internal — proprietary. For disclosure purposes this repository and its Actions logs are treated as
+public whatever the visibility setting says (D10).**
 
 ## Reporting a vulnerability
 
@@ -15,12 +16,12 @@ Do not open a public issue with a reproduction. Contact the Chief directly for u
 Security findings for this repository follow the same split as the open core:
 
 - **Security findings:** private GitHub Security Advisory with the reproduction attached. The
-  regression test enters `adversarial/` only in the fix PR (absent → passing). Because this
-  repository is private, there is no zero-day risk from an xfail with a repro here — but the
-  advisory mechanism is still the correct channel so findings are tracked and credited properly.
-- **Non-security findings** (contract gaps, behavior bugs): xfail test plus a public issue in
-  `Egzos/egzos` if the gap is in the container contract; a private issue here otherwise. The fix
-  PR flips the marker.
+  regression test enters `adversarial/` only in the fix PR (absent → passing). An xfail with a repro
+  would be a disclosure here exactly as in the open core — the repository is treated as public — so the
+  advisory is the only place a reproduction lives before the fix.
+- **Non-security findings** (contract gaps, behavior bugs): xfail test plus an issue — in
+  `Egzos/egzos` if the gap is in the container contract, here otherwise; never with a reproduction of
+  a security-class finding. The fix PR flips the marker.
 
 ## Scope
 

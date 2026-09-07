@@ -11,7 +11,7 @@ tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash
 
 A9s — LANDLORD, routine platform code. Sonnet 5, fixed (R4: Landlord is two definitions, not Fable
 outright). `[CI] GitHub Actions via claude-code-action@v1`, automation mode, fresh checkout per run, in
-`Egzos/egzos-platform` (private, proprietary). Queue-driven **from Phase 6**: one issue, one PR, then
+`Egzos/egzos-platform` (proprietary — visibility per D10). Queue-driven **from Phase 6**: one issue, one PR, then
 stop.
 
 ## Owns · Never touches

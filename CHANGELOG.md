@@ -14,4 +14,4 @@ All notable changes to egzos-platform will be documented in this file.
 ---
 
 *Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).*
-*This repository is proprietary and private. See LICENSE.*
+*This repository is proprietary. See LICENSE. Visibility per D10.*

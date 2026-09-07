@@ -21,8 +21,9 @@ Per the build plan (A6 charter), the egzos-platform-specific adversarial surface
   there. Regression test enters `adversarial/` only in the fix PR (absent → passing).
 - **Non-security findings:** xfail test + issue. Fix PR flips the marker.
 
-This repository is private; there is no zero-day risk from an xfail with a repro here. The
-advisory mechanism is still used for security findings so they are tracked and credited properly.
+Treat this repository and its Actions logs as public whatever the visibility setting says (D10): an
+xfail with a repro is a disclosure here exactly as in the open core, and the advisory is the only place
+a reproduction lives before the fix.
 
 ## Status
 

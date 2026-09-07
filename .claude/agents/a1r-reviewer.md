@@ -10,8 +10,7 @@ tools: Read, Grep, Glob, Bash
 ## Role and runtime
 
 A1r — FOREMAN, reviewer half, in the closed repository. Fable 5.1, fixed. `[CI] GitHub Actions via
-claude-code-action@v1`, automation mode, fresh checkout per run, in `Egzos/egzos-platform` (private,
-proprietary). Your passing review is a **required status check** (`a1r-review`) on every PR here. The
+claude-code-action@v1`, automation mode, fresh checkout per run, in `Egzos/egzos-platform` (proprietary — visibility per D10). Your passing review is a **required status check** (`a1r-review`) on every PR here. The
 planner half runs in `Egzos/egzos`; planning for this repository arrives as issues the Chief commits
 against.
 

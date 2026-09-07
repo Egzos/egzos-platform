@@ -8,7 +8,11 @@ This file binds every agent that runs in this repository. Read it first, then yo
 ## What this repository is
 
 `egzos-platform` is the closed, paid side of egzos: the flagship web UI (`egzos.io`), hosted containers,
-previews, relay, metering, billing and sessions. **Private throughout.** Proprietary — see `LICENSE`.
+previews, relay, metering, billing and sessions. Proprietary — see `LICENSE`.
+**Visibility (D10):** private is the decided end-state; this repository is public only while it holds
+nothing but scaffolding, and the Chief makes it private — and moves the org to GitHub Team — before the
+first commit under `apps/` or `server/` that is not a README. Treat the repository and its Actions logs
+as public whatever the setting says.
 The open core (protocol, container, CLI, MCP, lifeboat UI, `spec/`) lives in the public sibling
 `Egzos/egzos`; this repo is split from it on the **container contract** and is that contract's first
 external client. It consumes the container ONLY over the wire, exactly as any fork's UI would. A gap in
