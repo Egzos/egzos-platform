@@ -1,5 +1,5 @@
 name: landlord-queue
-# SHA-pinning of third-party actions is a Chief decision; major-tag pinning used here.
+# Third-party actions are SHA-pinned (Chief decision, 2026-09-06); Dependabot proposes bumps, the Chief commits them.
 # Dispatches a9s-landlord (Sonnet) and a9f-landlord (Fable).
 # Builder identity: egzos-forge App token.  WIP cap: 1 open PR per agent.
 # Note: landlord agents are queue-driven from Phase 6 onward.

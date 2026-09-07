@@ -1,5 +1,5 @@
 name: atelier-queue
-# SHA-pinning of third-party actions is a Chief decision; major-tag pinning used here.
+# Third-party actions are SHA-pinned (Chief decision, 2026-09-06); Dependabot proposes bumps, the Chief commits them.
 # Dispatches a4s-atelier (Sonnet) and a4g-atelier (Fable).
 # API_KEY_21ST and the 21st MCP config exist ONLY in the a4s-atelier job.
 # Builder identity: egzos-forge App token.  WIP cap: 1 open PR per agent.
