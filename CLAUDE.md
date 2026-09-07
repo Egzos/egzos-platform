@@ -102,6 +102,11 @@ files) is proposed by a1p-planner from `Egzos/egzos` as issues here and committe
   `Copyright (c) 2026 Ali Sasanian. All rights reserved. Proprietary and confidential. See LICENSE.`
 - Never force-push, never rewrite shared history, never push to `main`. A push after approval voids
   the approval by design.
+- Third-party actions are SHA-pinned; Dependabot proposes pin bumps as `governance`-labeled PRs. Those
+  runs carry no secrets, so the three review checks pass early on them and the Chief reviews the diff
+  directly — a workflow file is the Chief's commit in every case.
+- a6-adversary's only write path here is `adversary-queue` (label `agent:a6-adversary`, forge identity,
+  `adversarial/**` only); its nightly sweep runs as forge and files private advisories itself.
 - Contract gaps are escalations to `Egzos/egzos` (`contract-change`); design gaps are `design-gap`
   issues here. Security concerns → private Security Advisory, never a public issue.
 
