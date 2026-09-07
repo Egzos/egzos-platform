@@ -1,0 +1,36 @@
+name: tests
+# SHA-pinning of third-party actions is a Chief decision; major-tag pinning used here.
+# Platform note: the full test suite lands with Phase 6.  This job passes with a
+# note until then so the required `tests` check is always green.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main]
+
+permissions: {}
+
+env:
+  MODEL_FABLE: claude-fable-5-1
+  MODEL_SONNET: claude-sonnet-5
+  MODEL_HAIKU: claude-haiku-4-5-20251001
+
+jobs:
+  tests:
+    name: tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4  # SHA-pinning is a Chief decision
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: placeholder
+        run: |
+          echo "egzos-platform test suite lands with Phase 6 (React + TypeScript + Vite + Tailwind)."
+          echo "This job passes unconditionally until the stack exists."
+          echo "TODO(chief): wire up 'pnpm test' here once Phase 6 scaffold is merged."
