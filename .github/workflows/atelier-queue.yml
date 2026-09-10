@@ -88,34 +88,12 @@ jobs:
           gh issue comment "$ISSUE" \
             --body "WIP cap: \`a4s-atelier\` already has an open PR. Re-apply the \`agent:a4s-atelier\` label once it merges."
 
-      # Write 21st MCP config to a temp file.
-      # UNRESOLVED (was TODO(chief): confirm 21st MCP server command/URL). Verified 2026-09-09:
-      # `@21st-dev/mcp` does NOT exist on npm — the registry returns 404, so `npx -y @21st-dev/mcp`
-      # cannot resolve and this MCP has never started. The org publishes `@21st-dev/cli` (1.17.1)
-      # and `@21st-dev/magic` (0.2.3); which one is the catalogue server, and what env var it reads,
-      # is Hyperagent's call. Left unchanged rather than guessed at — pinning a version of a package
-      # that does not exist would only look resolved. Catalogue access in this job comes from the
-      # vendored 21st skills and `@21st-dev/cli`, which are real.
-      - name: write-mcp-config
-        if: steps.wip.outputs.has_wip != 'true'
-        run: |
-          cat > /tmp/mcp-21st.json << EOF
-          {
-            "mcpServers": {
-              "21st-dev": {
-                "command": "npx",
-                "args": ["-y", "@21st-dev/mcp@latest"],
-                "env": {
-                  "API_KEY": "${API_KEY_21ST}"
-                }
-              }
-            }
-          }
-          EOF
-
-      # Charter: the definition's body (frontmatter stripped) is appended to the system prompt.
-      # Phase 0.0 verified that --agent applies the frontmatter tools list as a hard restriction on the
-      # tool pool, which removed StructuredOutput (--json-schema), the sticky-comment MCP tool and Skill.
+      # 21st MCP: REMOVED, not disabled. `@21st-dev/mcp` does not exist on npm (registry 404,
+      # verified 2026-09-09), so `npx -y @21st-dev/mcp@latest` would install and execute whatever
+      # is first published under that unclaimed name — in the job holding API_KEY_21ST and the forge
+      # token. That is a namesquatting path, not a dead config. The org publishes @21st-dev/cli
+      # (1.17.1) and @21st-dev/magic (0.2.3); when Hyperagent names the catalogue server, re-add it
+      # pinned to an exact version. Catalogue access meanwhile is the vendored skills + pinned CLI.
       - name: charter-a4s-atelier
         if: steps.wip.outputs.has_wip != 'true'
         run: awk 'f{print} /^---$/{c++; if(c==2){f=1}}' .claude/agents/a4s-atelier.md > /tmp/charter-a4s-atelier.md
@@ -146,8 +124,7 @@ jobs:
             --append-system-prompt-file /tmp/charter-a4s-atelier.md
             --model ${{ env.MODEL_SONNET }}
             --max-turns 60
-            --mcp-config /tmp/mcp-21st.json
-            --allowedTools "Read,Write,Edit,MultiEdit,Grep,Glob,Bash(git:*),Bash(gh pr create:*),Bash(gh pr view:*),Bash(gh pr list:*),Bash(gh issue view:*),Bash(gh issue create:*),Bash(gh issue edit:*),Bash(gh issue comment:*),Bash(python:*),Bash(python3:*),Bash(pytest:*),Bash(ruff:*),Bash(pip:*),Bash(npx shadcn:*),Bash(npx @21st-dev/cli@1.17.1:*),Bash(npm install:*),Bash(npm run:*),Skill"
+            --allowedTools "Read,Write,Edit,MultiEdit,Grep,Glob,Bash(git:*),Bash(gh pr create:*),Bash(gh pr view:*),Bash(gh pr list:*),Bash(gh issue view:*),Bash(gh issue create:*),Bash(gh issue edit:*),Bash(gh issue comment:*),Bash(python:*),Bash(python3:*),Bash(pytest:*),Bash(ruff:*),Bash(pip:*),Bash(npx shadcn@4.21.0:*),Bash(npx @21st-dev/cli@1.17.1:*),Bash(npm ci:*),Bash(npm run:*),Skill"
 
   # ── a4g-atelier (Fable; no catalogue MCP) ────────────────────────────────
   a4g-atelier:
