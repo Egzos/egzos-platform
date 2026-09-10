@@ -107,8 +107,13 @@ jobs:
           }
           EOF
 
-      # --agent loads .claude/agents/a4s-atelier.md from the checked-out tree.
-      # fallback if --agent is rejected: --append-system-prompt "$(cat .claude/agents/a4s-atelier.md)"
+      # Charter: the definition's body (frontmatter stripped) is appended to the system prompt.
+      # Phase 0.0 verified that --agent applies the frontmatter tools list as a hard restriction on the
+      # tool pool, which removed StructuredOutput (--json-schema), the sticky-comment MCP tool and Skill.
+      - name: charter-a4s-atelier
+        if: steps.wip.outputs.has_wip != 'true'
+        run: awk 'f{print} /^---$/{c++; if(c==2){f=1}}' .claude/agents/a4s-atelier.md > /tmp/charter-a4s-atelier.md
+
       - uses: anthropics/claude-code-action@9c5ddab2e6d17b83ea679153b31f1d5f023cf636 # v1
         if: steps.wip.outputs.has_wip != 'true'
         env:
@@ -132,7 +137,7 @@ jobs:
             6. Add license headers to every new source file.
             7. Commit, push, open a PR filling `.github/PULL_REQUEST_TEMPLATE.md`, comment the PR URL on the issue, stop.
           claude_args: >-
-            --agent a4s-atelier
+            --append-system-prompt-file /tmp/charter-a4s-atelier.md
             --model ${{ env.MODEL_SONNET }}
             --max-turns 60
             --mcp-config /tmp/mcp-21st.json
@@ -197,8 +202,13 @@ jobs:
           gh issue comment "$ISSUE" \
             --body "WIP cap: \`a4g-atelier\` already has an open PR. Re-apply the \`agent:a4g-atelier\` label once it merges."
 
-      # --agent loads .claude/agents/a4g-atelier.md from the checked-out tree.
-      # fallback if --agent is rejected: --append-system-prompt "$(cat .claude/agents/a4g-atelier.md)"
+      # Charter: the definition's body (frontmatter stripped) is appended to the system prompt.
+      # Phase 0.0 verified that --agent applies the frontmatter tools list as a hard restriction on the
+      # tool pool, which removed StructuredOutput (--json-schema), the sticky-comment MCP tool and Skill.
+      - name: charter-a4g-atelier
+        if: steps.wip.outputs.has_wip != 'true'
+        run: awk 'f{print} /^---$/{c++; if(c==2){f=1}}' .claude/agents/a4g-atelier.md > /tmp/charter-a4g-atelier.md
+
       - uses: anthropics/claude-code-action@9c5ddab2e6d17b83ea679153b31f1d5f023cf636 # v1
         if: steps.wip.outputs.has_wip != 'true'
         env:
@@ -222,7 +232,7 @@ jobs:
             6. Add license headers to every new source file.
             7. Commit, push, open a PR filling `.github/PULL_REQUEST_TEMPLATE.md`, comment the PR URL on the issue, stop.
           claude_args: >-
-            --agent a4g-atelier
+            --append-system-prompt-file /tmp/charter-a4g-atelier.md
             --model ${{ env.MODEL_FABLE }}
             --max-turns 60
             --allowedTools "Read,Write,Edit,MultiEdit,Grep,Glob,Bash(git:*),Bash(gh pr create:*),Bash(gh pr view:*),Bash(gh pr list:*),Bash(gh issue view:*),Bash(gh issue create:*),Bash(gh issue edit:*),Bash(gh issue comment:*),Bash(python:*),Bash(python3:*),Bash(pytest:*),Bash(ruff:*),Bash(pip:*)"
