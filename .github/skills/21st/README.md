@@ -38,3 +38,28 @@ choice. a4s reads `spec/design/` and builds what is already decided.
 the skills are not installed, so an attempt to follow one fails closed. The files are left
 byte-identical rather than patched, so the digests above verify against upstream; the
 dangling references are expected, not an oversight.
+
+## Inert instructions inside the vendored text
+
+The SKILL.md files are byte-identical to source, so they still describe commands a4s is not
+granted. Each is inert — the grant list in `atelier-queue.yml` allows only `search`, `get`,
+`add`, `theme`, `logo` and `usage`:
+
+| vendored instruction | where | why it cannot run |
+|---|---|---|
+| `--api-key <key>` on the command line | `21st-cli-use` L24-25 | key comes from `API_KEY_21ST` in env; a CLI arg would land in a process list and a public Actions log |
+| `21st generate` / `21st iterate` | `21st-cli-use` L50-57, L103, L110 | generation is A2's, not a4s's; `generate` is ungranted |
+| `21st install-skill` | `21st-cli-use` L111 | run-time skill fetch; skills are vendored here and reviewed |
+| `21st init --client claude --write` | `21st-cli-use` L126 | writes MCP config into the session |
+| `21st publish*`, `21st login` | `21st-registry` (not vendored) | no outbound path from this repository |
+| `21st init --design-context`, `.21st/` writes | `21st-ui-build` | design direction is A2 studio's, with the Chief |
+
+If a grant is widened, revisit this table first.
+
+## Location
+
+These live under `.github/skills/`, **not** `.claude/skills/`. A project-scope `.claude/skills/`
+is auto-discovered by every session that checks out this repository — including a1r, a2 and a6,
+the required-check holders §P excludes from any catalogue surface. The `install-21st-skills` step
+in `atelier-queue.yml` copies them into `$HOME` for the a4s job alone: committed and content-pinned
+in the tree, present in exactly one session.
