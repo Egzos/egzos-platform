@@ -14,7 +14,6 @@ Retrieved: 2026-09-09. Files are byte-identical to source so these digests verif
 |---|---|---|
 | `21st-cli-use` | 5010 | `88ff054abb4334a5095462dd20b5c4ec214c9b99f3256eae60dadb384d136bca` |
 | `21st-ui-build` | 3002 | `151dbc3e97289a4ba945438f6552c0f597a40d8b5b1dc5d917dd9a5b65389641` |
-| `21st-ui-explore` | 2672 | `1b94d8d00e7ae87c3737e37c2019cbdc680393ef17a96388e9845f541367f1ec` |
 | `21st-ui-review` | 2206 | `78939e830bceb64b8e2d32f831b80472008d5d2e50b31c8a8f38af5e5a015088` |
 
 To update: refetch, diff, verify the new digest, commit as the Chief. Never automate this.
@@ -26,7 +25,15 @@ tokens **out** to 21st.dev. No CI identity holds an outbound path from a proprie
 repository. `21st-ai` generates components; a4s installs A2's picks, and whether the
 generation surface belongs to A2 is A2's decision, not a4s's.
 
-`21st-cli-use` still *references* all three (lines 18-20, 103, 110): "use the
+`21st-ui-explore` is not vendored either. It defines visual directions, recommends one and records
+the decision — design direction is human-only. That work has a seat already: A2 studio, on
+Hyperagent, in a direction session with the Chief (`spec/design/README.md`). The catalogue browsing
+this repo's agents must not do, A2 does there, with the Chief present to pick; the pick arrives here
+as a committed spec. `21st-ui-build` is vendored, but its design-context steps are inert for a4s:
+no `21st init --design-context`, no writes under `.21st/` (an unowned root path), no durable visual
+choice. a4s reads `spec/design/` and builds what is already decided.
+
+`21st-cli-use` still *references* the absent skills (lines 18-20, 103, 110): "use the
 `21st-registry` skill", "lives in the `21st-ai` skill". Those pointers are dead ends —
 the skills are not installed, so an attempt to follow one fails closed. The files are left
 byte-identical rather than patched, so the digests above verify against upstream; the

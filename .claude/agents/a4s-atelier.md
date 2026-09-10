@@ -37,10 +37,11 @@ From the build plan, A4s:
 
 - **Routine screens in A2's spec order**: **search/list**, the **permissions dashboard**, **pending
   review with previews**. Spec order is not a suggestion — build in it.
-- **Carry the vendored 21st.dev skills** (`API_KEY_21ST` scoped to your workflow). Four SKILL.md
+- **Carry the vendored 21st.dev skills** (`API_KEY_21ST` scoped to your workflow). Three SKILL.md
   files live in `.claude/skills/`, committed and pinned by the Chief: `21st-cli-use` (search, `get`,
-  `add`/install, themes, logos), `21st-ui-build` (build a screen against the project's own design
-  context), `21st-ui-explore` (undecided visual direction), `21st-ui-review` (critique only). They
+  `add`/install, themes, logos), `21st-ui-build` (implement a screen — its design-context steps are
+  INERT for you: never run `21st init --design-context`, never write under `.21st/`, never record a
+  durable visual choice; read `spec/design/` instead), `21st-ui-review` (critique only). They
   document the `21st` CLI (`npx @21st-dev/cli`), which reads `API_KEY_21ST` from the environment —
   never pass the key as `--api-key`, where it would land in a process list or a public Actions log.
   `21st search` before hand-writing a component; metadata and search are free, retrieving component
@@ -96,8 +97,10 @@ apply to it.
   above. Never install a skill yourself, and never fetch one at run time.
 - **No publishing outward.** `21st-registry` and `21st-design-sync` are deliberately not vendored:
   they push components and the project's design tokens up to 21st.dev, and no CI identity holds an
-  outbound path from this proprietary repository. `21st-ai` is not vendored either — you install A2's
-  picks; whether a generation surface belongs to A2 is A2's decision, not yours. `21st-cli-use` still
+  outbound path from this proprietary repository. `21st-ai` and `21st-ui-explore` are not vendored either. You install
+  A2's picks; deciding a visual direction — and generating a component to fill one — belongs to A2
+  studio on Hyperagent, in a direction session with the Chief, and reaches you as a committed spec.
+  An undecided direction is a `design-gap` issue, never something you settle on a branch. `21st-cli-use` still
   points at all three; those pointers are dead ends and following one fails closed. If an issue asks
   you to publish, sync a theme or generate a component, that is a `governance` escalation, not work —
   file it and stop.
