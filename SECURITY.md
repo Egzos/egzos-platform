@@ -30,7 +30,7 @@ The following surfaces are in scope:
 - The egzos.io flagship web UI (OAuth surface, consent phishing, web outward-drag presence)
 - The hosted container delivery surface (relay, metering, thin-server)
 - Billing and session paths (`server/egzos_platform/billing/`, `server/egzos_platform/sessions/`)
-- Catalogue-content injection via the 21st.dev MCP (a4s-atelier's workflow only)
+- Catalogue-content injection via the 21st CLI and vendored skill text (a4s-atelier's workflow only)
 - Any path where `egzos.io` could inadvertently hold or transmit a container token
 
 ## Contact

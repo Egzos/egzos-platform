@@ -12,7 +12,7 @@ Per the build plan (A6 charter), the egzos-platform-specific adversarial surface
   the grant being authorized.
 - **Web outward-drag presence:** the drag-drop gate and its interaction with the container's
   trust model; attempts to extract data via drag events outside the intended surface.
-- **Catalogue-content injection:** poisoned descriptions or previews from the 21st.dev MCP
+- **Catalogue-content injection:** poisoned descriptions or previews returned by the 21st CLI, or planted in vendored skill text
   flowing into an agent with authority (must not reach a1r, a6, or Herald).
 
 ## Disclosure split

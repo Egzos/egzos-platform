@@ -58,7 +58,7 @@
 
 - name: "agent:a4s-atelier"
   color: "1d4ed8"
-  description: "Assign to a4s-atelier (Sonnet): routine screens, shadcn picks vendored via PR, 21st MCP"
+  description: "Assign to a4s-atelier (Sonnet): routine screens, shadcn picks vendored via PR, 21st CLI"
 
 - name: "agent:a4g-atelier"
   color: "1d4ed8"
