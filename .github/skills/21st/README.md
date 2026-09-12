@@ -10,13 +10,40 @@ in the one session that holds the forge token and `API_KEY_21ST`.
 Source: https://21st.dev/api/skills/<name> — the live mirror of `21st-dev/skill`.
 Retrieved: 2026-09-09. Files are byte-identical to source so these digests verify upstream.
 
-| skill | bytes | sha256 |
-|---|---|---|
-| `21st-cli-use` | 5010 | `88ff054abb4334a5095462dd20b5c4ec214c9b99f3256eae60dadb384d136bca` |
-| `21st-ui-build` | 3002 | `151dbc3e97289a4ba945438f6552c0f597a40d8b5b1dc5d917dd9a5b65389641` |
-| `21st-ui-review` | 2206 | `78939e830bceb64b8e2d32f831b80472008d5d2e50b31c8a8f38af5e5a015088` |
+| skill | bytes | sha256 | licence |
+|---|---|---|---|
+| `21st-cli-use` | 5010 | `88ff054abb4334a5095462dd20b5c4ec214c9b99f3256eae60dadb384d136bca` | Apache-2.0 |
+| `21st-ui-build` | 3002 | `151dbc3e97289a4ba945438f6552c0f597a40d8b5b1dc5d917dd9a5b65389641` | Apache-2.0 |
+| `21st-ui-review` | 2206 | `78939e830bceb64b8e2d32f831b80472008d5d2e50b31c8a8f38af5e5a015088` | Apache-2.0 |
 
 To update: refetch, diff, verify the new digest, commit as the Chief. Never automate this.
+
+## Licence
+
+The vendored text is licensed **Apache-2.0** (SPDX `Apache-2.0`) by its upstream author:
+
+```
+Copyright 2026 21st.dev
+```
+
+The upstream licence is carried verbatim beside the skills at `.github/skills/21st/LICENSE`
+(11339 bytes, sha256 `ac17c29e5529b0d977b8521353838c06c46f814d83de12da221418d62102de6f`,
+fetched from `21st-dev/skill@main` on 2026-09-10). Upstream ships no `NOTICE` file, so there is
+nothing further to propagate under Apache-2.0 §4(d).
+
+Two things follow, and they are why the copy is here rather than a line in a table:
+
+- Vendoring the SKILL.md text into this tree is **redistribution**, and Apache-2.0 §4(a) attaches
+  to it — a copy of the licence travels with the copies of the work. This repository is public
+  under D10 today, which is what makes the obligation live rather than theoretical.
+- Apache-2.0 is **inbound-compatible with a proprietary repository**. It permits redistribution
+  inside a larger proprietary work provided the notices survive, so nothing about carrying this
+  text weakens the closed-source position of `egzos-platform`. It does not relicense anything
+  else in this tree: the repository's own `LICENSE` at the root governs egzos code, and this file
+  governs only the three vendored SKILL.md files in this directory.
+
+`21st-dev/skill` is the source of the *text*. The `21st` CLI (`@21st-dev/cli`) is a separate
+npm artifact under its own terms, is not vendored, and is invoked pinned at run time.
 
 ## Deliberately absent
 

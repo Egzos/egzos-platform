@@ -104,7 +104,7 @@ jobs:
           set -euo pipefail
           mkdir -p "$HOME/.claude/skills"
           cp -R .github/skills/21st/. "$HOME/.claude/skills/"
-          rm -f "$HOME/.claude/skills/README.md"
+          rm -f "$HOME/.claude/skills/README.md" "$HOME/.claude/skills/LICENSE"
           ls -1 "$HOME/.claude/skills"
 
       - name: charter-a4s-atelier
@@ -119,6 +119,7 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ steps.forge.outputs.token }}
+          allowed_bots: "egzos-forge[bot],chief-proxy[bot]"
           bot_id: ${{ vars.FORGE_BOT_ID }}
           bot_name: ${{ vars.FORGE_BOT_NAME }}
           prompt: |
@@ -213,6 +214,7 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ steps.forge.outputs.token }}
+          allowed_bots: "egzos-forge[bot],chief-proxy[bot]"
           bot_id: ${{ vars.FORGE_BOT_ID }}
           bot_name: ${{ vars.FORGE_BOT_NAME }}
           prompt: |
