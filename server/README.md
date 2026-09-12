@@ -8,7 +8,7 @@ The egzos-platform server side. Built by a9s-landlord and a9f-landlord, queue-dr
 thin-server delivery, hosted ambient intelligence (scheduling core intelligence on hosted
 containers; continuous baselining; nightly suggest).
 
-**a9f-landlord (Fable 5.1):** billing and session-security paths exclusively. Firebase-as-identity
+**a9f-landlord (Opus 5):** billing and session-security paths exclusively. Firebase-as-identity
 behind the abstraction, subscription proof, session checks. Owner of `billing/` and `sessions/`
 (exclusive paths; no other agent writes there).
 

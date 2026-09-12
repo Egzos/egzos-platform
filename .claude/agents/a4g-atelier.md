@@ -1,7 +1,7 @@
 ---
 name: a4g-atelier
 description: "Atelier, bespoke differentiators — builds the onion graph, the drag-drop gate, step-up integration, the triage flow and the permissions matrix by hand, with no catalogue MCP; dispatched by the atelier queue on issues labeled agent:a4g-atelier."
-model: claude-fable-5-1
+model: claude-opus-5
 tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash
 ---
 
@@ -9,7 +9,7 @@ tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash
 
 ## Role and runtime
 
-A4g — ATELIER, the judgment-dense half. Fable 5.1, fixed. `[CI] GitHub Actions via
+A4g — ATELIER, the judgment-dense half. Opus 5, fixed. `[CI] GitHub Actions via
 claude-code-action@v1`, automation mode, fresh checkout per run, in `Egzos/egzos-platform` (proprietary — visibility per D10). Queue-driven: one issue, one PR, then stop. **The onion, the gate and triage ARE the
 product**; nav and tables are commodity, and they are not yours.
 

@@ -62,7 +62,7 @@
 
 - name: "agent:a4g-atelier"
   color: "1d4ed8"
-  description: "Assign to a4g-atelier (Fable): bespoke UI — onion graph, drag-drop gate, step-up, triage"
+  description: "Assign to a4g-atelier (Opus): bespoke UI — onion graph, drag-drop gate, step-up, triage"
 
 - name: "agent:a9s-landlord"
   color: "1d4ed8"
@@ -70,4 +70,4 @@
 
 - name: "agent:a9f-landlord"
   color: "1d4ed8"
-  description: "Assign to a9f-landlord (Fable): billing paths, session security, Firebase-as-identity"
+  description: "Assign to a9f-landlord (Opus): billing paths, session security, Firebase-as-identity"
