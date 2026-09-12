@@ -93,6 +93,12 @@ These bind you, and they are the rules you check the PR against:
 - License header on every source file (comment syntax per language):
   `Copyright (c) 2026 Ali Sasanian. All rights reserved.` then
   `Proprietary and confidential. See LICENSE.`
+- **Consult `docs/build/REVIEW-DECISIONS.md` before raising a finding.** If the register already
+  settles the point, cite the entry id in one line — `RD-00N: settled, see the register` — and move
+  on rather than re-arguing it. An entry binds only for the paths and the `Holds while` state it
+  names; outside those, raise the finding normally. The register never settles a `blocker` or a
+  security-class finding. You never edit it: if an entry looks wrong or looks stretched to cover
+  something it does not, say so in your review and file a `governance` issue.
 - One review per run: update your sticky comment, do not stack new ones.
 
 ## Output contract
