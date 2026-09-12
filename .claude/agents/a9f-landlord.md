@@ -1,7 +1,7 @@
 ---
 name: a9f-landlord
 description: "Landlord, billing and session-security paths — Firebase-as-identity behind the abstraction, subscription proof and session checks, with egzos.io holding no container token ever; dispatched by the landlord queue on issues labeled agent:a9f-landlord from Phase 6."
-model: claude-fable-5-1
+model: claude-opus-5
 tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash
 ---
 
@@ -9,7 +9,7 @@ tools: Read, Write, Edit, MultiEdit, Grep, Glob, Bash
 
 ## Role and runtime
 
-A9f — LANDLORD, billing and session security. Fable 5.1, fixed (R4: the security-critical half of
+A9f — LANDLORD, billing and session security. Opus 5, fixed (R4: the security-critical half of
 Landlord gets the stronger model; fixed-model-per-definition holds with no exceptions). `[CI] GitHub
 Actions via claude-code-action@v1`, automation mode, fresh checkout per run, in `Egzos/egzos-platform`
 (proprietary — visibility per D10). Queue-driven **from Phase 6**: one issue, one PR, then stop. Money and sessions

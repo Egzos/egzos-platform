@@ -24,13 +24,13 @@ instruction to act.
 
 | Definition | Model | Tools class | Trigger |
 |---|---|---|---|
-| `a1r-reviewer` | Fable 5.1 (`claude-fable-5-1`) | reviewer | `pull_request` |
-| `a2-conformance` | Fable 5.1 (`claude-fable-5-1`) | reviewer | `pull_request` — early pass when no UI path changed |
+| `a1r-reviewer` | Opus 5 (`claude-opus-5`) | reviewer | `pull_request` |
+| `a2-conformance` | Opus 5 (`claude-opus-5`) | reviewer | `pull_request` — early pass when no UI path changed |
 | `a4s-atelier` | Sonnet 5 (`claude-sonnet-5`) | builder (+ the 21st CLI and vendored skills, its job only) | atelier-queue: issue labeled `agent:a4s-atelier` |
-| `a4g-atelier` | Fable 5.1 (`claude-fable-5-1`) | builder (no catalogue tooling) | atelier-queue: issue labeled `agent:a4g-atelier` |
-| `a6-adversary` | Fable 5.1 (`claude-fable-5-1`) | builder tools, `adversarial/**` only | `pull_request` (+`labeled`/`unlabeled`; early pass without `security`) · nightly `schedule` · `workflow_dispatch` |
+| `a4g-atelier` | Opus 5 (`claude-opus-5`) | builder (no catalogue tooling) | atelier-queue: issue labeled `agent:a4g-atelier` |
+| `a6-adversary` | Opus 5 (`claude-opus-5`) | builder tools, `adversarial/**` only | `pull_request` (+`labeled`/`unlabeled`; early pass without `security`) · nightly `schedule` · `workflow_dispatch` |
 | `a9s-landlord` | Sonnet 5 (`claude-sonnet-5`) | builder | landlord-queue: issue labeled `agent:a9s-landlord` (Phase 6+) |
-| `a9f-landlord` | Fable 5.1 (`claude-fable-5-1`) | builder | landlord-queue: issue labeled `agent:a9f-landlord` (Phase 6+) |
+| `a9f-landlord` | Opus 5 (`claude-opus-5`) | builder | landlord-queue: issue labeled `agent:a9f-landlord` (Phase 6+) |
 
 Tools classes (SCAFFOLD-SPEC §3): reviewer = `Read, Grep, Glob, Bash`; builder =
 `Read, Write, Edit, MultiEdit, Grep, Glob, Bash`. No CI agent gets WebFetch or WebSearch. `API_KEY_21ST`
