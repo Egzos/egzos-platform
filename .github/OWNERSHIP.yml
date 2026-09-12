@@ -23,6 +23,9 @@ chief_only:
   - "package.json"
   - "pyproject.toml"
   - "pnpm-lock.yaml"
+  # The review register is a control over the reviewers; an agent that could edit it could
+  # settle a finding against itself. docs/** is unowned here, so this is explicit, not new.
+  - "docs/build/REVIEW-DECISIONS.md"
 
 agents:
   # Atelier routine: list, search, permissions dashboard, pending review.
