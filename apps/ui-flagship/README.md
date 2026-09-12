@@ -21,7 +21,7 @@ tokens before it enters the flagship. Inspiration flows through the tokens, neve
   (license noted) or `bespoke`. A4 never improvises a pick; a missing pick is a `design-gap`
   issue and the agent takes the next item.
 - **Catalogue for chrome:** nav, tables, dialogs, forms, command palette, empty states, toasts.
-  Source: shadcn/ui + 21st.dev picks (a4s-atelier carries the 21st MCP with `API_KEY_21ST`).
+  Source: shadcn/ui + 21st.dev picks (a4s-atelier carries the 21st CLI with `API_KEY_21ST`; skills vendored under `.github/skills/21st/`).
 - **Bespoke for the differentiators:** onion graph, drag-drop gate, triage flow, permissions
   matrix. Owner: a4g-atelier.
 - **Vendored via PR:** a4s installs picks with the shadcn CLI into `src/components/` and COMMITS
