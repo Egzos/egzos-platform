@@ -118,7 +118,7 @@ files) is proposed by a1p-planner from `Egzos/egzos` as issues here and committe
 
 | Definition | Model |
 |---|---|
-| a1r-reviewer, a2-conformance, a4g-atelier, a6-adversary, a9f-landlord | Fable 5.1 (`claude-fable-5-1`) |
+| a1r-reviewer, a2-conformance, a4g-atelier, a6-adversary, a9f-landlord | Opus 5 (`claude-opus-5`) |
 | a4s-atelier, a9s-landlord | Sonnet 5 (`claude-sonnet-5`) |
 
 Verified by the Chief in the Anthropic console before the first real run (`MODEL_*` env in workflows).

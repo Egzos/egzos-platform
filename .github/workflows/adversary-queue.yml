@@ -16,7 +16,7 @@ on:
 permissions: {}
 
 env:
-  MODEL_FABLE: claude-fable-5-1
+  MODEL_OPUS: claude-opus-5
   MODEL_SONNET: claude-sonnet-5
   MODEL_HAIKU: claude-haiku-4-5-20251001
 
@@ -111,6 +111,6 @@ jobs:
             6. Commit, push, open a PR filling `.github/PULL_REQUEST_TEMPLATE.md`, comment the PR URL on the issue, stop.
           claude_args: >-
             --append-system-prompt-file /tmp/charter-a6-adversary.md
-            --model ${{ env.MODEL_FABLE }}
+            --model ${{ env.MODEL_OPUS }}
             --max-turns 60
             --allowedTools "Read,Write,Edit,MultiEdit,Grep,Glob,Bash(git:*),Bash(gh pr create:*),Bash(gh pr view:*),Bash(gh pr list:*),Bash(gh issue view:*),Bash(gh issue comment:*),Bash(python:*),Bash(python3:*),Bash(pytest:*),Bash(ruff:*),Bash(pip:*)"
