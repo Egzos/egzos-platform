@@ -1,6 +1,6 @@
 name: atelier-queue
 # Third-party actions are SHA-pinned (Chief decision, 2026-09-06); Dependabot proposes bumps, the Chief commits them.
-# Dispatches a4s-atelier (Sonnet) and a4g-atelier (Fable).
+# Dispatches a4s-atelier (Sonnet) and a4g-atelier (Opus).
 # API_KEY_21ST and the 21st MCP config exist ONLY in the a4s-atelier job.
 # Builder identity: egzos-forge App token.  WIP cap: 1 open PR per agent.
 
@@ -19,7 +19,7 @@ on:
 permissions: {}
 
 env:
-  MODEL_FABLE: claude-fable-5-1
+  MODEL_OPUS: claude-opus-5
   MODEL_SONNET: claude-sonnet-5
   MODEL_HAIKU: claude-haiku-4-5-20251001
 
@@ -140,7 +140,7 @@ jobs:
             --max-turns 60
             --allowedTools "Read,Write,Edit,MultiEdit,Grep,Glob,Bash(git:*),Bash(gh pr create:*),Bash(gh pr view:*),Bash(gh pr list:*),Bash(gh issue view:*),Bash(gh issue create:*),Bash(gh issue edit:*),Bash(gh issue comment:*),Bash(python:*),Bash(python3:*),Bash(pytest:*),Bash(ruff:*),Bash(pip:*),Bash(npx shadcn@4.21.0:*),Bash(npx @21st-dev/cli@1.17.1 search:*),Bash(npx @21st-dev/cli@1.17.1 get:*),Bash(npx @21st-dev/cli@1.17.1 theme:*),Bash(npx @21st-dev/cli@1.17.1 logo:*),Bash(npx @21st-dev/cli@1.17.1 usage:*),Bash(npm ci:*),Bash(npm run:*),Skill"
 
-  # ── a4g-atelier (Fable; no catalogue MCP) ────────────────────────────────
+  # ── a4g-atelier (Opus; no catalogue MCP) ────────────────────────────────
   a4g-atelier:
     name: a4g-atelier
     if: |
@@ -231,6 +231,6 @@ jobs:
             7. Commit, push, open a PR filling `.github/PULL_REQUEST_TEMPLATE.md`, comment the PR URL on the issue, stop.
           claude_args: >-
             --append-system-prompt-file /tmp/charter-a4g-atelier.md
-            --model ${{ env.MODEL_FABLE }}
+            --model ${{ env.MODEL_OPUS }}
             --max-turns 60
             --allowedTools "Read,Write,Edit,MultiEdit,Grep,Glob,Bash(git:*),Bash(gh pr create:*),Bash(gh pr view:*),Bash(gh pr list:*),Bash(gh issue view:*),Bash(gh issue create:*),Bash(gh issue edit:*),Bash(gh issue comment:*),Bash(python:*),Bash(python3:*),Bash(pytest:*),Bash(ruff:*),Bash(pip:*)"
