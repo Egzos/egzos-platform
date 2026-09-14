@@ -1,7 +1,7 @@
 name: atelier-queue
 # Third-party actions are SHA-pinned (Chief decision, 2026-09-06); Dependabot proposes bumps, the Chief commits them.
 # Dispatches a4s-atelier (Sonnet) and a4g-atelier (Opus).
-# API_KEY_21ST and the 21st MCP config exist ONLY in the a4s-atelier job.
+# API_KEY_21ST and the 21st CLI grants exist ONLY in the a4s-atelier job.
 # Builder identity: egzos-forge App token.  WIP cap: 1 open PR per agent.
 
 on:
@@ -24,7 +24,7 @@ env:
   MODEL_HAIKU: claude-haiku-4-5-20251001
 
 jobs:
-  # ── a4s-atelier (Sonnet; carries 21st MCP) ────────────────────────────────
+  # ── a4s-atelier (Sonnet; carries the 21st CLI + vendored skills) ──────────
   a4s-atelier:
     name: a4s-atelier
     if: |
